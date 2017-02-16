@@ -8,5 +8,5 @@ int add(int a, int b)
 
 int main()
 {
-     printf("%d\n",add(3,4));
+     printf("%d\n",add(6,4));
 }
