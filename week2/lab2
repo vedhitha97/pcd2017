@@ -1,0 +1,61 @@
+TO FIND THE REVERSE OF A NUMBER
+
+#include<stdio.h>
+int reverse(int x)
+{
+    int reverse=0;
+    int rem=0;
+    while(x>0)
+    {
+        rem=x%10;
+        reverse=reverse*10+rem;
+        x=x%10;
+    }
+    return reverse;
+}
+int main()
+{
+    int x;
+    {
+        printf("enter the number\n");
+        scanf("%d",&x);
+    }
+    if (x==reverse(x))
+    {
+        printf("the number is palindrome\n");
+    }
+    if (x!=reverse(x))
+    {
+        printf("the number is not a palindrome\n");
+    }
+}
+
+
+#include<stdio.h>
+int s(int n,int a[n+1],int x);
+int main()
+{
+    int n,x,sum;
+    printf("enter the degree and the value of x\n");
+    scanf("%d%d",&n,&x);
+    int a[n+1];
+    printf("enter the co-efficients:\n");
+    for (int i=n;i>=0;i--)
+    {
+        scanf("%d",&a[i]);
+    }
+    sum=s(n,a,x);
+    printf("the sim of the polynomial %d.\n",sum);
+    return 0;
+}
+int s(int n,int a[n+1],int x)
+      {
+          int sum=0;
+          for(int i=n;i>0;i--)
+          {
+              sum=(sum+a[i])*x;
+          }
+          sum=sum+a[0];
+          return sum;
+      }
+    
