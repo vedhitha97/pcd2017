@@ -1,4 +1,4 @@
-TO FIND THE REVERSE OF A NUMBER
+1.TO FIND THE REVERSE OF A NUMBER
 
 #include<stdio.h>
 int reverse(int x)
@@ -30,7 +30,7 @@ int main()
     }
 }
 
-HORNER'S METHOD
+2.HORNER'S METHOD
 
 #include<stdio.h>
 int s(int n,int a[n+1],int x);
@@ -61,7 +61,7 @@ int s(int n,int a[n+1],int x)
       }
 
 
-TAYLORS PROGRAM
+3.TAYLORS PROGRAM
 
 #include<stdio.h>
 #include<math.h>
@@ -100,7 +100,7 @@ int main()
 	printf("comparing res and sinf%f",res);
 }
 
-LEAP YEAR
+4.LEAP YEAR
 
 
 #include<stdio.h>
@@ -124,7 +124,7 @@ int is leap(int year)
     }
     int main()
     {
-        printf("enter year=2016\n");
+        printf("enter the year\n");
         scanf("%d",&year);
         int r=is leap (year);
         switch(r)
@@ -147,3 +147,55 @@ int is leap(int year)
         return 0;
     }
    
+   
+ 5.  COMPLEX NUMBERS
+   
+   
+   #include<stdio.h>
+#include<math.h>
+struct complex{
+    float real,imag;
+};
+struct quad{
+    struct complex r1,r2;
+};
+int roots(float a,float b,float c,struct quad*r)
+{
+    if(a==0)
+    {
+        return -1;
+    }
+    float d=((b*b)-(4*a*c));
+    if (d==0)
+    {
+        r->r1.real=r->r2.real=((-b)/(2*a));
+        r->r1.imag=r->r2.imag=0;
+    }
+    if(d>0)
+    {
+        r->r1.real=(-b+sqrt(d))/(2*a);
+        r->r2.real=(-b+sqrt(d))/(2*a);
+        r->r1.imag=r->r2.imag=0;
+        return 1;
+    }
+    r->r1.real=r->r2.real=(-b)/(2*a);
+    r->r1.imag=(sqrt(-d))/(2*a);
+    r->r2.imag=(sqrt(-d))/(2*a);
+    return 2;
+}
+int main()
+{
+    float a,b,c;
+    struct quad r;
+    printf("enter the coefficients of the quadratic equation a,b and c");
+    scanf("%f%f%f",&a,&b,&c);
+    roots(a,b,c,&r);
+    printf("solution:root 1\n the real part of root 1 is %f \n"'r.r1.real);
+    printf("the imaginary part of root is %f \n",r.r1.imag);
+    printf("solution:root 2\n the real part of root 2 is %f \n"'r.r2.real);
+    printf("the imaginary part of root is %f \n",r.r2.imag);
+    return 0;
+           }
+           
+
+6.SQUARE ROOT
