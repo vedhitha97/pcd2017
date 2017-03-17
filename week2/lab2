@@ -104,7 +104,7 @@ int main()
 
 
 #include<stdio.h>
-int is leap(int year)
+int leap(int year)
 {
     if(year%400==0)
     {
@@ -124,16 +124,17 @@ int is leap(int year)
     }
     int main()
     {
+    int year;
         printf("enter the year\n");
         scanf("%d",&year);
-        int r=is leap (year);
+        int r= leap (year);
         switch(r)
         {
             case -1:
-            printf("%d is not a leap year");
+            printf("%d is not a leap year\n",year);
             break;
             case 0:
-            printf("%d is a quadrenal leap year");
+            printf("%d is a quadrenal leap year\n",year);
             break;
             case 1:
             printf("%d is a century year and not a leap year\n",year);
